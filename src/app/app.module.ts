@@ -8,13 +8,23 @@ import { AppComponent } from './app.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateUserComponent,
     UserDetailsComponent,
-    UserListComponent
+    UserListComponent,
+    LoginComponent,
+    AdminComponent,
+    HomeComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
