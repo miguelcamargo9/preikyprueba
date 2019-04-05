@@ -19,7 +19,6 @@ export class AuthService {
   setLoggedIn(value: boolean){
     this.loggedInStatus = value
     localStorage.setItem('loggedIn', `${this.loggedInStatus}`)
-    console.log(`ESTA LOGUEADO POR ACA? ${JSON.parse(localStorage.getItem('loggedIn') || 'false')}`)
   }
 
   get isLoggedIn(){
