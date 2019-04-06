@@ -1,0 +1,38 @@
+<br>
+<h3>Credit Card {{creditCard.num}} </h3>
+<div class="card">
+  <div class="card-header">
+    Credit Card Details
+  </div>
+  <div class="card-body">
+    <div>
+        <label><strong>Exp Date: </strong></label> {{creditCard.expdate}}
+    </div>
+    <div>
+        <label><strong>Franchise:  </strong></label> {{creditCard.franchise}}
+    </div>
+    <div>
+        <label><strong>Token:  </strong></label> {{creditCard.token}}
+    </div>
+  </div>
+</div>
+<br>
+<h3>Credit Cards Movements</h3>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let movement of movements">
+      <th scope="row">{{movement.id}}</th>
+      <td>{{movement.amount}}</td>
+      <td>{{movement.date}}</td>
+      <td>{{movement.type}}</td>
+    </tr>
+  </tbody>
+</table>

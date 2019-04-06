@@ -12,7 +12,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUser(id: number): Observable<Object> {
-    console.log(`${this.baseUrl}/${id}`)
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
@@ -28,7 +27,7 @@ export class UserService {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  getUsersList(): Observable<any> {
+  getUsersList(): Observable<Object> {
     return this.http.get(`${this.baseUrl}/all`);
   }
 }

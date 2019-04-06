@@ -1,4 +1,5 @@
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { CreditcardDetailsComponent } from './creditcard-details/creditcard-details.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
   { path: "users/:id", component: UserDetailsComponent, canActivate: [AuthGuard] },
+  { path: "creditcard/:id", component: CreditcardDetailsComponent, canActivate: [AuthGuard] },
   { path: 'add', component: CreateUserComponent, canActivate: [AuthGuard] },
   { path: 'logout', component: LogoutComponent },
   { path: 'login', component: LoginComponent },

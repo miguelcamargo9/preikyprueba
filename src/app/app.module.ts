@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { CreditcardListComponent } from './creditcard-list/creditcard-list.component';
+import { CreditcardDetailsComponent } from './creditcard-details/creditcard-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     AdminComponent,
     HomeComponent,
-    LogoutComponent
+    LogoutComponent,
+    CreditcardListComponent,
+    CreditcardDetailsComponent
   ],
   imports: [
     BrowserModule,

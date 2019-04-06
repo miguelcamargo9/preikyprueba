@@ -1,16 +1,38 @@
-<h3>User Details</h3>
-<div *ngIf="user">
+<br>
+<h3>User {{user.username}} </h3>
+<div class="card">
+  <div class="card-header">
+    User Details
+  </div>
+  <div class="card-body">
     <div>
-        <label>Name: </label> {{user.fullname}}
+        <label><strong>Name: </strong></label> {{user.fullname}}
     </div>
     <div>
-        <label>Document Type: </label> {{user.documenttype}}
+        <label><strong>Document Type:  </strong></label> {{user.documenttype}}
     </div>
     <div>
-        <label>Document Number: </label> {{user.documentnumber}}
+        <label><strong>Document Number:  </strong></label> {{user.documentnumber}}
     </div>
-
-    <span class="button is-small btn-danger" (click)='deleteUser()'>Delete</span>
-
-    <hr/>
+  </div>
 </div>
+<br>
+<h3>Credit Cards Details</h3>
+<div class="row">
+  <div class="card" *ngFor="let creditCard of creditCards">
+    <div class="card-header">
+      <strong>Credit Card: {{creditCard.num}}</strong>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><label><strong>Franchise:  </strong></label> {{creditCard.franchise}}</li>
+         <li class="list-group-item"><label><strong>Exp Date: </strong></label> {{creditCard.expdate}}</li>
+         <li class="list-group-item"><label><strong>Toekn:  </strong></label> {{creditCard.token}}</li>
+       </ul>
+       <br>
+       <a [routerLink]="['/creditcard/', creditCard.id]" class="active" role="button" routerLinkActive="active">
+         <button class="btn btn-info">Details</button>
+       </a>
+    </div>
+  </div>
+<div>

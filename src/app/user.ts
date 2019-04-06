@@ -1,6 +1,7 @@
 export class User {
     id: number;
-    documenttype: string;
+    documenttype: number;
     fullname: string;
     documentnumber: number;
+    usernamemal: string;
 }
