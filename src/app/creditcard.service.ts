@@ -18,4 +18,12 @@ export class CreditcardService {
   getCreditCardById(id: number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
+
+  createCreditCard(creditcard: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, creditcard);
+  }
+
+  deleteCreditCard(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  }
 }

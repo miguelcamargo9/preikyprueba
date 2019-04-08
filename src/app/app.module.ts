@@ -16,6 +16,8 @@ import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { CreditcardListComponent } from './creditcard-list/creditcard-list.component';
 import { CreditcardDetailsComponent } from './creditcard-details/creditcard-details.component';
+import { CreateCreditcardComponent } from './create-creditcard/create-creditcard.component';
+import { CreateMovementComponent } from './create-movement/create-movement.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CreditcardDetailsComponent } from './creditcard-details/creditcard-deta
     HomeComponent,
     LogoutComponent,
     CreditcardListComponent,
-    CreditcardDetailsComponent
+    CreditcardDetailsComponent,
+    CreateCreditcardComponent,
+    CreateMovementComponent
   ],
   imports: [
     BrowserModule,

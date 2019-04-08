@@ -20,8 +20,8 @@
                     <td>{{user.documenttype}}</td>
                     <td>{{user.documentnumber}}</td>
                     <td>
-                      <a [routerLink]="['/users/', user.id]" class="active" role="button" routerLinkActive="active">
-                        <button class="btn btn-info">Details</button>
+                      <a [routerLink]="['/user/', user.id]" class="active" role="button" routerLinkActive="active">
+                        <button class="btn btn-info mr-2">Details</button>
                       </a>
                       <button (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
                     </td>

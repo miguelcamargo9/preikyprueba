@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
 
   reloadData() {
     this.userService.getUsersList().subscribe((data) => {
-      this.users =  data
+      this.users =  data as any
     }, (error) => {
       console.log(error)
     })
@@ -28,7 +28,6 @@ export class UserListComponent implements OnInit {
     this.userService.deleteUser(id)
       .subscribe(
         data => {
-          console.log(data);
           this.reloadData();
         },
         error => console.log(error));

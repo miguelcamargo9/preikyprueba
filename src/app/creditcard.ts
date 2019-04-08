@@ -4,4 +4,5 @@ export class CreditCard {
     franchise: string;
     num: string;
     token: string;
+    userCode: Object;
 }

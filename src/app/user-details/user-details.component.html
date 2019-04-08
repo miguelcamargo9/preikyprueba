@@ -1,38 +1,51 @@
 <br>
-<h3>User {{user.username}} </h3>
-<div class="card">
-  <div class="card-header">
-    User Details
+<div *ngIf="user">
+  <h3>User {{user.username}} </h3>
+  <div class="card">
+    <div class="card-header">
+      User Details
+    </div>
+    <div class="card-body">
+      <div>
+          <label><strong>Name: </strong></label> {{user.fullname}}
+      </div>
+      <div>
+          <label><strong>Document Type:  </strong></label> {{user.documenttype}}
+      </div>
+      <div>
+          <label><strong>Document Number:  </strong></label> {{user.documentnumber}}
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <div>
-        <label><strong>Name: </strong></label> {{user.fullname}}
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Credit Cards Details</h3>
     </div>
-    <div>
-        <label><strong>Document Type:  </strong></label> {{user.documenttype}}
+    <div class="col-sm-6">
+      <a [routerLink]="['/creditcard/add', user.id]" class="active" role="button" routerLinkActive="active">
+        <button class="btn btn-success">Add Credit Card</button>
+      </a>
     </div>
-    <div>
-        <label><strong>Document Number:  </strong></label> {{user.documentnumber}}
+  </div>
+  <br>
+  <div class="row">
+    <div class="card col-sm-4" *ngFor="let creditCard of creditCards">
+      <div class="card-header">
+        <strong>Credit Card: {{creditCard.num}}</strong>
+      </div>
+      <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><label><strong>Franchise:  </strong></label> {{creditCard.franchise}}</li>
+           <li class="list-group-item"><label><strong>Exp Date: </strong></label> {{creditCard.expdate}}</li>
+           <li class="list-group-item"><label><strong>Toekn:  </strong></label> {{creditCard.token}}</li>
+         </ul>
+         <br>
+         <a [routerLink]="['/creditcard/', creditCard.id]" class="active" role="button" routerLinkActive="active">
+           <button class="btn btn-info mr-2">Details</button>
+         </a>
+         <button (click)="deleteCreditCard(creditCard.id)" class="btn btn-danger">Delete</button>
+      </div>
     </div>
   </div>
 </div>
-<br>
-<h3>Credit Cards Details</h3>
-<div class="row">
-  <div class="card" *ngFor="let creditCard of creditCards">
-    <div class="card-header">
-      <strong>Credit Card: {{creditCard.num}}</strong>
-    </div>
-    <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><label><strong>Franchise:  </strong></label> {{creditCard.franchise}}</li>
-         <li class="list-group-item"><label><strong>Exp Date: </strong></label> {{creditCard.expdate}}</li>
-         <li class="list-group-item"><label><strong>Toekn:  </strong></label> {{creditCard.token}}</li>
-       </ul>
-       <br>
-       <a [routerLink]="['/creditcard/', creditCard.id]" class="active" role="button" routerLinkActive="active">
-         <button class="btn btn-info">Details</button>
-       </a>
-    </div>
-  </div>
-<div>

@@ -19,14 +19,27 @@ export class CreditcardDetailsComponent implements OnInit {
   constructor(private creditcardService: CreditcardService, private movementService: MovementService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.reloadData()
+  }
+
+  reloadData(){
     this.route.params.subscribe(params => {
       this.creditcardService.getCreditCardById(params.id).subscribe(data => {
-        this.creditCard = data
+        this.creditCard = data as any
       })
       this.movementService.getMovementsByCreditCardId(params.id).subscribe(data => {
-        this.movements = data
+        this.movements = data as any
       })
     });
+  }
+
+  deleteMovement(id: number) {
+    this.movementService.deleteMovement(id)
+      .subscribe(
+        data => {
+          this.reloadData();
+        },
+      error => console.log(error));
   }
 
 }

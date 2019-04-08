@@ -19,15 +19,27 @@ export class UserDetailsComponent implements OnInit {
   constructor(private userService: UserService, private creditcardService: CreditcardService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.reloadData()
+  }
+
+  reloadData(){
     this.route.params.subscribe(params => {
       this.userService.getUser(params.id).subscribe(data => {
-        this.user = data
+        this.user = data as any
       })
       this.creditcardService.getCreditCardsByUser(params.id).subscribe(data => {
-        console.log(data)
-        this.creditCards = data
+        this.creditCards = data as any
       })
     });
+  }
+
+  deleteCreditCard(id: number) {
+    this.creditcardService.deleteCreditCard(id)
+      .subscribe(
+        data => {
+          this.reloadData();
+        },
+      error => console.log(error));
   }
 
 }
