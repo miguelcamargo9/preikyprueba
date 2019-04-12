@@ -14,16 +14,17 @@ export class CreateMovementComponent implements OnInit {
 
   creditCard: CreditCard = new CreditCard();
   movement: Movement = new Movement();
+  submitted = false;
 
   constructor(private creditcardService: CreditcardService, private movementService: MovementService, private route: ActivatedRoute, private router: Router) {
-    this.movement.date = new Date();
-    var date = this.movement.date.getDate();
-    var month = this.movement.date.getMonth();
-    var year = this.movement.date.getFullYear();
+    var today = new Date();
+    var date = today.getDate();
+    var month = today.getMonth();
+    var year = today.getFullYear();
 
     this.movement.date = `${year}-${this.pad(month + 1)}-${this.pad(date)}`
   }
-
+  
   pad(n) {
       return n<10 ? '0'+n : n;
   }

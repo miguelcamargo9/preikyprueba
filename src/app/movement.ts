@@ -3,4 +3,5 @@ export class Movement {
     amount: number;
     date: string;
     type: string;
+    creditcardCode: Object;
 }
